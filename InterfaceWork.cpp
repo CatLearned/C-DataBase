@@ -42,17 +42,17 @@ void print_menuhelp();
 
 void addhelp();
 {
-    cout << " " << endl;
-    cout << " " << endl;
-    cout << " " << endl;
+    cout << "!ent - add item to db " << endl;
+    cout << "!bck  - to menu " << endl;
+    cout << "!hlp  - to help " << endl;
 }
 
 void check_enter(bool *b, bool *e, string str);
 {
     switch (str)
-    case "!enter": *e = false;
-    case "!back":  *b = false;
-    case "!help":  ;
+    case "!ent": *e = false;
+    case "!bck": *b = false;
+    case "!hlp": addhelp;
 }
 
 bool check_vhod(bool b, bool e)
@@ -60,10 +60,32 @@ bool check_vhod(bool b, bool e)
     if (b = false || e = false) return false;
     else return true;
 }
+
+string givemeaning(string info, &b, &e);
+{
+    if (check_vhod(b,e))
+    {
+        cout << info << " > ";
+        cin >> s;
+        check_enter(&b, &e, s);
+        if (check_vhod(b,e))
+        {
+            return s;
+        }
+    }
+    return "";
+}
+
 void add_member(int* i);
 {
     string s = "";
     man* item;
+    element->id = *i;
+    element->fam = "";
+    element->name = "";
+    element->surname = "";
+    element->typebyke = 0;
+    element->ages = 0;
     bool b = true;
     bool b = true;
     do
@@ -72,26 +94,56 @@ void add_member(int* i);
         {
             cout << "Enter fam > ";
             cin >> s;
+            check_enter(&b, &e, s);
+            if (check_vhod(b,e))
+            {
+                
+                
+            }
         }
         if (check_vhod(b,e))
         {
             cout << "Enter name > ";
             cin >> s;
+            check_enter(&b, &e, s);
+            if (check_vhod(b,e))
+            {
+                
+                
+            }
         }
         if (check_vhod(b,e))
         {
             cout << "Enter surname > ";
             cin >> s;
+            check_enter(&b, &e, s);
+            if (check_vhod(b,e))
+            {
+                
+                
+            }
         }
         if (check_vhod(b,e))
         {
             cout << "Enter type of byke (1 - MTP, 2 - Road, 3 - Hibrid, 4 - Electro) >";
             cin >> s;
+            check_enter(&b, &e, s);
+            if (check_vhod(b,e))
+            {
+                
+                
+            }
         }
         if (check_vhod(b,e))
         {
             cout << "Stage >";
             cin >> s;
+            check_enter(&b, &e, s);
+            if (check_vhod(b,e))
+            {
+                
+                
+            }
         }
     }
     while (e == true && b = true);
