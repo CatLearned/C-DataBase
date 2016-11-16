@@ -47,18 +47,30 @@ void addhelp();
     cout << "!hlp  - to help " << endl;
 }
 
-void check_enter(bool *b, bool *e, string str);
+void check_enter(bool *b, bool *e, string *str);
 {
     switch (str)
     case "!ent": *e = false;
     case "!bck": *b = false;
-    case "!hlp": addhelp;
+    case "!hlp": 
+    {
+        addhelp;
+        *str = "";
+    }
 }
 
 bool check_vhod(bool b, bool e)
 {
     if (b = false || e = false) return false;
     else return true;
+}
+
+int ReturnerInteger(string s, int min, int max)
+{
+    int chislo = atoi(s.c_str());
+    if (chislo >= min && chislo <= max)
+    return chislo;
+    else return 0;
 }
 
 string givemeaning(string info, &b, &e);
@@ -90,7 +102,7 @@ void add_member(int* i);
     bool b = true;
     do
     {
-        if (check_vhod(b,e))
+        /*if (check_vhod(b,e))
         {
             cout << "Enter fam > ";
             cin >> s;
@@ -100,7 +112,14 @@ void add_member(int* i);
                 
                 
             }
-        }
+        }*/
+        do
+        {
+            s = givemeaning("Enter fam", &b, &e);
+            if(s!="") item->fam = s; // Need test
+        } while (s = "")   
+        
+        
         if (check_vhod(b,e))
         {
             cout << "Enter name > ";
@@ -148,5 +167,8 @@ void add_member(int* i);
     }
     while (e == true && b = true);
     if (b = false) cout << "Move to menu";
-    if (e = false) cout << "Adding item";
+    if (e = false) 
+    {
+        cout << "Adding item";
+    }
 }
