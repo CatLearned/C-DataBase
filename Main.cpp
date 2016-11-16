@@ -16,17 +16,17 @@ int main()
     string s = "";
     do
     {
-        bool ext = false;
+        bool ext = true;
         cout << ">"; sin >> s
         switch (s)
         case "!add": ;// func add;
-        case "!del": ;// func del;
-        case "!chg": ;// func chg;
-        case "!prt": ;// func prt;
-        case "!frd": ;// func frd;
-        case "!fwr": ;// func fwr;
-        case "!hpl": ;// func hlp;
-        case "!ext": ext = true;// func ext;
+        case "!del": ;// func delete;
+        case "!chg": ;// func change;
+        case "!prt": ;// func print;
+        case "!frd": ;// func fileRead;
+        case "!fwr": ;// func fileWriter;
+        case "!hpl": print_menuhelp();// func hlp;
+        case "!ext": ext = false;// func ext;
         default cout << "Wrong argement" << endl;
     }
     while(ext);
